@@ -1,0 +1,55 @@
+
+
+html,
+body {
+height: 100%;
+
+}
+
+.container {
+max-width: 400px;
+margin: 30px auto 0;
+box-shadow: 0px 0px 5px black;
+padding: 20px;
+box-sizing: border-box;
+}
+/* 
+a {
+color: black;
+text-decoration: none;
+}
+
+.icon.right {
+float: right;
+}
+
+.icon::after {
+font-family: 'FontAwesome';
+color: white;
+font-size: 24px;
+}
+
+.icon.burger::after {
+content: '\f0c9';
+}
+
+.icon.search::after {
+content: '\f002';
+}
+
+.icon.arrow-left::after {
+float: left;
+content: '\f053';
+}
+
+.icon.arrow-right::after {
+content: '\f054';
+} */
+
+/* //Top View */
+
+.top-view {
+min-height: 50%;
+background-color: mediumorchid;
+}
+
