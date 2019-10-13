@@ -1,96 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1.0"
-        name="viewport">
-  <meta content="ie=edge"
-        http-equiv="X-UA-Compatible">
-  <title>Mia's Calendar</title><!-- Added link to the jQuery Library -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>M Calendar</title>
+    
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+    />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!-- Added a link to Bootstrap-->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        rel="stylesheet">
-  <!-- my external stylesheet #1-->
-  <link href="style.css"
-        rel="stylesheet">
-  <!-- my external stylesheet #2-->     
-  <link href="./assets/dark.css"
-        rel="stylesheet">
-    <!-- Link to Font Awesome     -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class='container'>
-    <div class='top'>
-      <div class="color-layer">
-      <div class='navbar'>
-        <a href='#' class='icon burger'></a> 
-        <a href='#' class='icon search'></a> 
-      </div>
-      <div class='header'>
-        <h1>Good Morning!</h1>
-        <div class="profile-container">
-        <img alt=''
-            class='profile-main'
-            src='./assets/Images/image-3.png'>
-        <div class='notifications'><span>3</span></div>
-      </div>
-        </div>
-        <div class='month-selection'>
-            <a class='icon arrow-left'></a> 
-            <a class='icon arrow-right'></a> 
-            <span class='month'>October</span>
-        </div>
-      </div>
-    </div>
-    <!-- Fuction to Add
-        <div class="switch">
-          Dark mode: <span class="inner-switch">OFF</span>
-        </div> -->
-        
-        <div class='bottom'>
-          <div class='container-week'>
-            <ul class="week">
-              <li class="day day-names">sun</li>
-              <li class="day day-names">mon</li>
-              <li class="day day-names">tue</li>
-              <li class="day day-names">wed</li>
-              <li class="day day-names">thu</li>
-              <li class="day day-names">fri</li>
-              <li class="day day-names">sat</li>
-            </ul>
-            <ul class="week">
-              <li class="day"><span>6</span></li>
-              <li class="day"><span>7</span></li>
-              <li class="day"><span>8</span></li>
-              <li class="day"><span>9</span></li>
-              <li class="day"><span>10</span></li>
-              <li class="day current point"><span>11</span></li>
-              <li class="day point"><span>12</span></li>
-            </ul>
-          </div>
-          <div class="entry-container">
-            <div class="entry">
-              <img src="./assets/Images/image-1.png" alt="" class="profile">
-              <span class="title">Drop off borrowed vinal</span>
-              <span class="time">8-9am</span>
-            </div>
-            <div class="entry">
-              <img src="./assets/Images/image-2.png" alt="" class="profile">
-              <span class="title">Lunch @ Snarf's</span>
-              <span class="time">12-1pm</span>
-            </div>
-            <div class="entry">
-              <img src="./assets/Images/image-4.png" alt="" class="profile">
-              <span class="title">Hangout with Murat</span>
-              <span class="time"></span>
-            </div>
-            <div class="actionbutton"></div>
-          </div>
-  </div>
-  </div>
 
-  <script src='./script.js'></script>
+<body>
+    <div class="container-whole">
+            <header class="jumbotron">
+                <div class="switch"> Dark mode: <span class="inner-switch">OFF</span></div> 
+                <h1 class="display-3">Work Day Scheduler</h1>
+                <div class="greeting"></div>
+                <div id="currentDaT"></div>
+            </header>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">9 am</div>
+        </div>
+        <div class="col-10">
+        <textarea class="am" id="text9" value="9"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img src="images/lock-open.png" lock="open" number="9" class="lock" />
+        </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">10 am</div>
+        </div>
+        <div class="col-10">
+        <textarea class="am" id="text10"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img
+            src="images/lock-open.png"
+            lock="open"
+            number="10"
+            class="lock"
+        />
+        </div>
+    </div>  
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">11 am</div>
+        </div>
+        <div class="col-10">
+        <textarea class="am" id="text11"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img
+            src="images/lock-open.png"
+            lock="open"
+            number="11"
+            class="lock"
+        />
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">noon</div>
+        </div>
+        <div class="col-10">
+        <textarea class="am" id="text12"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img
+            src="images/lock-open.png"
+            lock="open"
+            number="12"
+            class="lock"
+        />
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">1 pm</div>
+        </div>
+        <div class="col-10">
+        <textarea class="pm" id="text13"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img src="images/lock-open.png" lock="open" number="1" class="lock" />
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">2 pm</div>
+        </div>
+        <div class="col-10">
+        <textarea class="pm" id="text14"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img src="images/lock-open.png" lock="open" number="2" class="lock" />
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">3 pm</div>
+        </div>
+        <div class="col-10">
+        <textarea class="pm" id="text15"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img src="images/lock-open.png" lock="open" number="3" class="lock" />
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">4 pm</div>
+        </div>
+        <div class="col-10">
+        <textarea class="pm" id="text16"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img src="images/lock-open.png" lock="open" number="4" class="lock" />
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-1">
+        <div class="time">5 pm</div>
+        </div>
+        <div class="col-10">
+        <textarea class="pm" id="text17"></textarea>
+        </div>
+        <div class="col-1 lock">
+        <img src="images/lock-open.png" lock="open" number="5" class="lock" />
+        </div>
+    </div>
+    </div>
+
+    <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group" role="group">
+            <button class="btn btn-outline-danger" id="all-lock">All Lock</button>
+            </div>
+            <div class="btn-group" role="group">
+            <button class="btn btn-outline-success" id="all-unlock">All Unlock</button>
+            </div>
+            <div class="btn-group" role="group">
+            <button class="btn btn-outline-info" id="reset">Reset All</button>
+            </div>
+        </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

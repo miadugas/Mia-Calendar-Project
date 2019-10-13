@@ -1,111 +1,110 @@
-// Bootstrap Calendar
+//think i have moment figured out; testing...
+$("#currentDaT").text(moment().format("MMMM Do, h:mm a"));
+var hour = moment().format("h");
+var amPm = moment().format("a");
+var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+onLoad();
 
+//functions to make it...functional :p
+function onLoad() {
+if(amPm === "pm"){
+    hour = parseInt(hour) + 12;
+}
+console.log(hour);
+for (var i = 0; i < timeArray.length; i++) {
+    if (timeArray[i] > hour) {
+    $("#text" + timeArray[i]).attr(
+        "style",
+        "background: rgb(141, 138, 138);"
+    );
+    } else {
+    $("#text" + timeArray[i]).attr(
+        "style",
+        "background: rgb(189, 184, 184);"
+    );
+    }
+}
 
-$('#calendar').fullCalendar({
-header: {
-left: 'prev,next today',
-center: 'addEventButton',
-right: 'month,agendaWeek,agendaDay,listWeek'
-    },
-defaultDate: '2018-11-16',
-navLinks: true,
-editable: true,
-eventLimit: true,
-events: [{
-title: 'Simple static event',
-start: '2018-11-16',
-description: 'Super cool event'
-},
+for (var i = 0; i < timeArray.length; i++) {
+    if (hour === timeArray[i]) {
+    $("#text" + timeArray[i]).attr("style", "background: #999999;");
+    }
+}
+for (var i = 0; i < timeArray.length; i++) {
+    var z = JSON.parse(localStorage.getItem(timeArray[i]));
+    $("#text" + timeArray[i]).text(z);
+}
+}
 
-],
-customButtons: {
-addEventButton: {
-text: 'Add new event',
-click: function () {
-var dateStr = prompt('Enter date in YYYY-MM-DD format');
-var date = moment(dateStr);
-
-if (date.isValid()) {
-$('#calendar').fullCalendar('renderEvent', {
-title: 'Dynamic event',
-start: date,
-allDay: true
-});
+//event listeners
+$(".lock").on("click", function() {
+var n = $(this).attr("lock");
+var x = $(this).attr("number");
+if (n === "open") {
+    $(this).attr("src", "images/lock-closed.png");
+    var y = document.getElementById("text" + x).value;
+    localStorage.setItem(x, JSON.stringify(y));
+    document.getElementById("text" + x).readOnly = true;
+    $(this).attr("lock", "closed");
 } else {
-alert('Invalid Date');
+    $(this).attr("src", "images/lock-open.png");
+    $(this).attr("lock", "open");
+    document.getElementById("text" + x).readOnly = false;
 }
-
-}
-}
-},
-dayClick: function (date, jsEvent, view) {
-var date = moment(date);
-
-if (date.isValid()) {
-$('#calendar').fullCalendar('renderEvent', {
-title: 'Dynamic event from date click',
-start: date,
-allDay: true
-});
-} else {
-alert('Invalid');
-}
-},
 });
 
+$("#all-lock").on("click", function() {
+$(".lock").attr("src", "images/lock-closed.png");
+$(".lock").attr("lock", "closed");
+for (var i = 0; i < timeArray.length; i++) {
+    document.getElementById("text" + timeArray[i]).readOnly = true;
+    var y = document.getElementById("text" + timeArray[i]).value;
+    localStorage.setItem(timeArray[i], JSON.stringify(y));
+}
+});
 
+$("#all-unlock").on("click", function() {
+$(".lock").attr("src", "images/lock-open.png");
+$(".lock").attr("lock", "open");
+for (var i = 0; i < timeArray.length; i++) {
+    document.getElementById("text" + timeArray[i]).readOnly = false;
+}
+});
 
+$("#reset").on("click", function() {
+for (var i = 0; i < timeArray.length; i++) {
+    localStorage.clear();
+    document.getElementById("text" + timeArray[i]).value = "";
+}
+})
 
+// Dark Mode Switch
+//triggers function when switch is flipped
+$( ".inner-switch" ).on("click", function() {
+    if( $( "body" ).hasClass( "dark" )) {
+    $( "body" ).removeClass( "dark" );
+    $( ".inner-switch" ).text( "OFF" );
+    } else {
+    $( "body" ).addClass( "dark" );
+    $( ".inner-switch" ).text( "ON" );
+    }
+})
+// Time of Day Greeting
+var thehours = new Date().getHours();
+	var themessage;
+	var morning = ('Good Morning');
+	var afternoon = ('Good Afternoon');
+	var evening = ('Good Evening');
 
+	if (thehours >= 0 && thehours < 12) {
+		themessage = morning; 
+	} else if (thehours >= 12 && thehours < 17) {
+		themessage = afternoon;
+	} else if (thehours >= 17 && thehours < 24) {
+		themessage = evening;
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Functon to AddScript for Dark Mode Switch
-// //triggers function when switch is flipped
-// $( ".inner-switch" ).on("click", function() {
-//     if( $( "body" ).hasClass( "dark" )) {
-//     $( "body" ).removeClass( "dark" );
-//     $( ".inner-switch" ).text( "OFF" );
-//     } else {
-//     $( "body" ).addClass( "dark" );
-//     $( ".inner-switch" ).text( "ON" );
-//     }
-// })
-
-// Functon to Add - Time of day greeting 
-// var hours = new Date().getHours();
-// var message;
-// var morning = ('Good Morning');
-// var afternoon = ('Good Afternoon');
-// var evening = ('Good Evening');
-
-// if (hours >= 0 && hours <12) {
-// message = morning;
-
-// } else if (hours >12 && hours <17){
-//     message = afternoon;
-
-// } else if (hours >17 && hours <24){
-//     message = evening;
-
-// }
-
-// $('greeting').append(message);
-
-
-
-
+	$('.greeting').append(themessage);
 
 
 

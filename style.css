@@ -1,231 +1,132 @@
-/* 
-
-
- */
-html, body {
-height: 100%;
-
-
+body {
+    font-family: sans-serif;
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 10px;   
 }
 
-.container{
-    max-width: 400px;
-    margin: 30px auto 0;
+.container-whole {
+    max-width: 1000px;
+    margin: 20px auto 0;
     box-shadow: 0px 0px 5px black;
     box-sizing: border-box;
-    height: calc(100% - 60px);
-}
-
-a{
-    color: black;
-    text-decoration: none;
-}
-
-.icon.search{
-float: right;
-}
-
-.icon::after{
-    font-family: 'FontAwesome';
-    color: whitesmoke;
-    font-size: 25px;
-}
-.icon.burger::after{
-    content: '\f0c9';
-}
-
-.icon.search::after{
-content: '\f002';
-}
-
-.icon.arrow-left::after{
-float: left;
-content:'\f053';
-}
-
-.icon.arrow-right::after{
-    float: right;
-    content:'\f054';
-    }
-
-/* for the top */
-.top{
-    height: 50%;
-    background-image: url(./assets/Images/olga-bast-ZfEOApJ_h5M-unsplash.jpg);
-    /* background-image: url(https://picsum.photos/id/866/1080/720); */
-    background-size: cover;
-    color: whitesmoke;
-    
+    height: calc(80% - 60px);
+    font-size: medium;
 
 }
 
-h1{
-    font-weight: 100;
+#currentDaT {
+    font-weight: 400;
     font-size: 20px;
     text-align: center;
-    margin: 10px 0;
-    letter-spacing: 1.5px;
-
 }
 
-.color-layer{
-    background-color: rgba(75,40,5,0.5);
-    height: 100%;
-    width: 100%;
-    padding: 20px 20px 0 20px;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.header{
-    position: relative;
-    box-sizing: border-box;
-}
-
-.navbar{
-    padding: 10px;
-    display: block;
-}
-
-.profile-container{
-    width: 100px;
-    height: 100px;
-    margin: 30px auto;
-    position: relative;
-    
-}
-
-.profile-main{
-    border-radius: 50%;
-    height: 100%;
-    display: block;
-    width: 100%;
-    position: relative;
-    }
-
-    .profile{
-    border-radius: 50%;
-    width: 40px;
-    height: auto;
-    }
-
-/* notifications of coming daily events */
-.notifications{
-    position: absolute;
-    border-radius: 50%;
-    background-color: tomato;
-    width: 30px;
-    height: 30px;
+.greeting {
+    font-weight: bold;
+    font-size: 30px;
     text-align: center;
-    top: 0;
-    right: 0;
-    font-weight: 300;
+
 }
 
-span{
-    font-size: 14px;
+.display-3 {
+    font-size: 60px;
+}
+
+
+small {
+    font-style: italic;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+img {
+    max-width: 100%;
     display: block;
-    position: relative;
-    top: 50%;
-    margin-top: -7px;
-}
-
-.month-selection{
-text-align: center;
-position: relative;
-width: calc(100%);
-padding: 10px 0;
-bottom: 20px;
-box-sizing: border-box;
-}
-
-.month{
-font-weight: 300;
-font-size: 14px;
-letter-spacing: 2px;
-text-transform: uppercase;
+    align-self: center;
 }
 
 
-/* for the bottom */
-.bottom {
-    overflow: hidden;
-    height: 50%;
-}
 
-.container-week{
-/* background-color: turquoise; */
-padding: 10px;
+.jumbotron{
+    padding: 2%;
+    background-image: url(./assets/Images/olga-bast-ZfEOApJ_h5M-unsplash.jpg);
+    margin-bottom: 10px;
+
 
 }
 
-ul.week{
-display: block;
-padding: 0%;
-width: 100%;
-margin-bottom: 2px;
-}
-
-li.day{
-display: inline-block; 
-width: 13%;
-height: 0;
-text-align: center;
-padding: 0 0 13%;
-font-weight: 300;
-background-color: khaki;
-box-sizing: border-box;
-/* position: absolute; maybe...*/
-}
-
-.day-names{
-    text-transform: uppercase;
-    
-    letter-spacing: 1px;
-    color: grey;
-}
-
-.current.point {
-    background-color: grey;
-    border-radius: 50%;
-}
-
-.day.span{
-    display: block;
-    position: relative;
-    font-size: 1px; 
-}
-
-
-/* .day.current.point span{
-    background-color: grey;
-    border-radius: 50%;
-    display: block;
-    width: 80%;
-    height: 0;
-    padding-bottom: 80%;
+#header {
     text-align: center;
-    position: relative;
-    top: -40%;
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.col-10{
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.time {
+    margin-top: 10px;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.img2 {
+    width: 52px;
+    background: royalblue;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+textarea {
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    background: rgb(189, 184, 184);
+    width: 100%;
+}
+
+.col-1 {
+    font-weight: lighter;
+    padding: 0px;
     
-} */
+}
 
-/* Function to Add - Time of day greeting
-.greeting{
-    font-weight: 600;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
+.pm {
+    
+}
 
+.div.btn-toolbar{
+    text-align: center;
+}
 
-/* Function to Add - Style for the dark mode switch 
+.btn-group{
+    margin: auto; 
+    text-align: center;
+    width: inherit;
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
 
+/* Style for the dark mode switch  */
 .switch {
-    align-self: flex-end;
+    float: right;
+    /* overflow: hidden; */
+    align-items: baseline;
     margin: 0.9375rem;
 }
+
 .inner-switch {
     display: inline-block;
     cursor: pointer;
@@ -236,24 +137,13 @@ box-sizing: border-box;
     font-size: 1rem;
     padding: 0.1875rem;
     margin-left: 0.3125rem;
-} */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* dark mode */
-.dark,
-.dark * {
+.dark, .dark * {
     background-color: #222;
     color: #e6e6e6;
     border-color: #e6e6e6;
+    background-image: none;
+
 }
+
