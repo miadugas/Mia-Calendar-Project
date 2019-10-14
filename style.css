@@ -56,8 +56,6 @@ img {
     padding: 2%;
     background-image: url(./assets/Images/olga-bast-ZfEOApJ_h5M-unsplash.jpg);
     margin-bottom: 10px;
-
-
 }
 
 #header {
@@ -81,13 +79,6 @@ h2 {
     font-weight: lighter;
 }
 
-.img2 {
-    width: 52px;
-    background: royalblue;
-    border-radius: 4px;
-    padding: 15px;
-}
-
 textarea {
     border: none;
     text-decoration: none;
@@ -102,7 +93,8 @@ textarea {
     
 }
 
-.pm {
+.col-10 {
+    
     
 }
 

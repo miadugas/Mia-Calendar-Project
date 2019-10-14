@@ -10,17 +10,15 @@ function onLoad() {
 if(amPm === "pm"){
     hour = parseInt(hour) + 12;
 }
-console.log(hour);
+
 for (var i = 0; i < timeArray.length; i++) {
     if (timeArray[i] > hour) {
     $("#text" + timeArray[i]).attr(
-        "style",
-        "background: rgb(141, 138, 138);"
+        
     );
     } else {
     $("#text" + timeArray[i]).attr(
-        "style",
-        "background: rgb(189, 184, 184);"
+        " "
     );
     }
 }
@@ -36,7 +34,7 @@ for (var i = 0; i < timeArray.length; i++) {
 }
 }
 
-//event listeners
+//event listeners for on click 
 $(".lock").on("click", function() {
 var n = $(this).attr("lock");
 var x = $(this).attr("number");
@@ -52,7 +50,7 @@ if (n === "open") {
     document.getElementById("text" + x).readOnly = false;
 }
 });
-
+//all lock event listener
 $("#all-lock").on("click", function() {
 $(".lock").attr("src", "images/lock-closed.png");
 $(".lock").attr("lock", "closed");
@@ -62,7 +60,7 @@ for (var i = 0; i < timeArray.length; i++) {
     localStorage.setItem(timeArray[i], JSON.stringify(y));
 }
 });
-
+//all unlock event listener
 $("#all-unlock").on("click", function() {
 $(".lock").attr("src", "images/lock-open.png");
 $(".lock").attr("lock", "open");
@@ -70,7 +68,7 @@ for (var i = 0; i < timeArray.length; i++) {
     document.getElementById("text" + timeArray[i]).readOnly = false;
 }
 });
-
+//reset all event listener
 $("#reset").on("click", function() {
 for (var i = 0; i < timeArray.length; i++) {
     localStorage.clear();
