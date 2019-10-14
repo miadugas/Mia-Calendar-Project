@@ -5,7 +5,8 @@ body {
     flex-direction: column;
     max-width: 50rem;
     margin: 0 auto;
-    padding: 0 10px;   
+    padding: 0 10px; 
+    background-color: floralwhite;
 }
 
 .container-whole {
@@ -31,41 +32,20 @@ body {
 
 }
 
-.display-3 {
+.WDS {
     font-size: 60px;
 }
 
-
-small {
-    font-style: italic;
-}
-
-article {
-    display: flex;
-    flex-direction: column;
-}
 img {
     max-width: 100%;
     display: block;
     align-self: center;
 }
 
-
-
 .jumbotron{
     padding: 2%;
     background-image: url(./assets/Images/olga-bast-ZfEOApJ_h5M-unsplash.jpg);
     margin-bottom: 10px;
-}
-
-#header {
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-h2 {
-    font-size: 20px;
-    margin-bottom: 0px;
 }
 
 .col-10{
@@ -80,7 +60,6 @@ h2 {
 }
 
 textarea {
-    border: none;
     text-decoration: none;
     border-radius: 4px;
     background: rgb(189, 184, 184);
@@ -90,11 +69,6 @@ textarea {
 .col-1 {
     font-weight: lighter;
     padding: 0px;
-    
-}
-
-.col-10 {
-    
     
 }
 

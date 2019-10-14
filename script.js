@@ -5,7 +5,7 @@ var amPm = moment().format("a");
 var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 onLoad();
 
-//functions to make it...functional :p
+//functions 
 function onLoad() {
 if(amPm === "pm"){
     hour = parseInt(hour) + 12;
@@ -25,7 +25,6 @@ for (var i = 0; i < timeArray.length; i++) {
 
 for (var i = 0; i < timeArray.length; i++) {
     if (hour === timeArray[i]) {
-    $("#text" + timeArray[i]).attr("style", "background: #999999;");
     }
 }
 for (var i = 0; i < timeArray.length; i++) {
@@ -39,20 +38,20 @@ $(".lock").on("click", function() {
 var n = $(this).attr("lock");
 var x = $(this).attr("number");
 if (n === "open") {
-    $(this).attr("src", "images/lock-closed.png");
+    $(this).attr("src", "./assets/images/red-x.png");
     var y = document.getElementById("text" + x).value;
     localStorage.setItem(x, JSON.stringify(y));
     document.getElementById("text" + x).readOnly = true;
     $(this).attr("lock", "closed");
 } else {
-    $(this).attr("src", "images/lock-open.png");
+    $(this).attr("src", "./assets/Images/green-button.png");
     $(this).attr("lock", "open");
     document.getElementById("text" + x).readOnly = false;
 }
 });
 //all lock event listener
 $("#all-lock").on("click", function() {
-$(".lock").attr("src", "images/lock-closed.png");
+$(".lock").attr("src", "./assets/images/red-x.png");
 $(".lock").attr("lock", "closed");
 for (var i = 0; i < timeArray.length; i++) {
     document.getElementById("text" + timeArray[i]).readOnly = true;
@@ -62,7 +61,7 @@ for (var i = 0; i < timeArray.length; i++) {
 });
 //all unlock event listener
 $("#all-unlock").on("click", function() {
-$(".lock").attr("src", "images/lock-open.png");
+$(".lock").attr("src", "./assets/Images/green-button.png");
 $(".lock").attr("lock", "open");
 for (var i = 0; i < timeArray.length; i++) {
     document.getElementById("text" + timeArray[i]).readOnly = false;
