@@ -38,7 +38,7 @@ $(".lock").on("click", function() {
 var n = $(this).attr("lock");
 var x = $(this).attr("number");
 if (n === "open") {
-    $(this).attr("src", "./assets/Images/red-icon.png");
+    $(this).attr("src", "./assets/Images/x.png");
     var y = document.getElementById("text" + x).value;
     localStorage.setItem(x, JSON.stringify(y));
     document.getElementById("text" + x).readOnly = true;
@@ -51,7 +51,7 @@ if (n === "open") {
 });
 //all lock event listener
 $("#all-lock").on("click", function() {
-$(".lock").attr("src", "./assets/Images/red-icon.png");
+$(".lock").attr("src", "./assets/Images/x.png");
 $(".lock").attr("lock", "closed");
 for (var i = 0; i < timeArray.length; i++) {
     document.getElementById("text" + timeArray[i]).readOnly = true;
